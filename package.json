@@ -1,0 +1,29 @@
+
+{
+  "name": "FinanceDB",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {},
+  "imports": {
+    "#*": "./*.js"
+  },
+  "scripts": {
+    "start": "node --env-file=.env server.js",
+    "dev": "node --watch --env-file=.env server.js",
+    "db:schema": "psql -d FinanceDB -f db/schema.sql",
+    "db:seed": "node --env-file=.env db/seed.js",
+    "db:reset": "npm run db:schema && npm run db:seed"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.14.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.9.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
