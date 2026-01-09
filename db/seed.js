@@ -13,8 +13,8 @@ console.log("🌱 Database seeded.");
 
 
 async function seed() {
-  // create User
-  const user = await createUser("user", "password123");
+  // create 1 User that needs username and email!
+  const user = await createUser("testuser", "oliver.swaby@gmail.com");
   if (!user || !user.id) {
     throw new Error("User creation failed");
   }}
